@@ -10,7 +10,6 @@ const morgan = require('morgan');
 
 // atlassian-connect-express also provides a middleware
 const ace = require('atlassian-connect-express');
-const hbs = require('express-hbs');
 
 // Use Handlebars as view engine:
 // https://npmjs.org/package/express-hbs
@@ -82,12 +81,6 @@ app.prepare().then(() => {
   server.engine('js', (path, options, callback) => callback(null, options.message));
   server.set('views', './pages');
   server.set('view engine', 'js');
-
-  // // Configure Handlebars
-  const viewsDir = `${__dirname}/views`;
-  server.engine('hbs', hbs.express4({ partialsDir: viewsDir }));
-  server.set('view engine', 'hbs');
-  server.set('views', viewsDir);
 
   // Show nicer errors in dev mode
   if (dev) server.use(errorHandler());
