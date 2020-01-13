@@ -1,13 +1,15 @@
 export default function(app, server, addon) {
-  server.get('/', function(req, res) {
-    res.redirect('/atlassian-connect.json');
+  server.get('/hello-world', addon.authenticate(), (req, res) => {
+    app.render(req, res, '/hello-world', req.payload);
   });
 
-  server.get('/hello-world', addon.authenticate(), (req, res) =>
-    app.render(req, res, '/hello-world', req.payload)
-  );
-
-  server.get('/web-panel', addon.authenticate(), (req, res) =>
-    app.render(req, res, '/web-panel', req.payload)
-  );
+  server.get('*', (req, res, next) => {
+    if (
+      req.url === '/atlassian-connect.json' ||
+      req.url === '/installed' ||
+      req.url === '/uninstalled'
+    )
+      return next();
+    app.render(req, res, req.url, { ...req.payload });
+  });
 }

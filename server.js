@@ -46,7 +46,7 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: false }));
 
   // Define you app routes in routes.js
-  setupRoutes(app, server, addon);
+  setupRoutes(app, server, addon, handle);
 
   // Boot the HTTP server
   http.createServer(server).listen(port, () => {

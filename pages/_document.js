@@ -17,7 +17,18 @@ export default class ConnectDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>{this.getHostScript()}</Head>
+        <Head>
+          {this.getHostScript()}
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          />
+          <script
+            src="https://connect-cdn.atl-paas.net/all.js"
+            async
+            data-options="sizeToParent:true"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
