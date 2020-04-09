@@ -2,7 +2,7 @@
   "name": "custom-server-express",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon -r esm server.js",
+    "dev": "AC_OPTS=no-auth,no-token-verification,force-reg nodemon -r esm server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js"
   },
@@ -15,17 +15,18 @@
     "errorhandler": "^1.5.1",
     "esm": "^3.2.25",
     "express": "^4.16.4",
-    "express-hbs": "^2.3.0",
+    "express-hbs": "^2.3.3",
     "helmet": "^3.21.2",
     "http": "0.0.0",
     "morgan": "^1.9.1",
-    "next": "latest",
+    "next": "^9.3.4",
     "os": "^0.1.1",
     "pg": "^7.10.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "sequelize": "^5.21.2",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "ngrok": "^3.2.7"
