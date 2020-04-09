@@ -3,8 +3,8 @@ import { ServerStyleSheet } from 'styled-components';
 
 export default class ConnectDocument extends Document {
   static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
 
     try {
       ctx.renderPage = () =>

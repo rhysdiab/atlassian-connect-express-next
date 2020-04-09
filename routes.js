@@ -8,9 +8,8 @@ export default function (app, server, addon) {
       req.url === '/atlassian-connect.json' ||
       req.url === '/installed' ||
       req.url === '/uninstalled'
-    ) {
+    )
       return next();
-    }
     app.render(req, res, req.url, { ...req.payload });
   });
 }
