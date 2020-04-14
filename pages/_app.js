@@ -13,11 +13,11 @@ const theme = {
 
 export default class MyApp extends App {
  render() {
-  const { Component, pageProps } = this.props;
+  const { Component, pageProps, router } = this.props;
   return (
    <ThemeProvider theme={theme}>
     <MainMenu />
-    <Component {...pageProps} />
+    <Component {...pageProps} {...router.query} />
    </ThemeProvider>
   );
  }
