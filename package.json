@@ -2,7 +2,7 @@
   "name": "custom-server-express",
   "version": "1.0.0",
   "scripts": {
-    "dev": "AC_OPTS=no-auth,no-token-verification,force-reg nodemon -r esm server.js",
+    "dev": "AC_OPTS=no-auth,no-token-verification,force-reg node -r esm server.js",
     "build": "next build",
     "start": "NODE_ENV=production node -r esm server.js"
   },
