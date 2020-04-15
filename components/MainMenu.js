@@ -16,7 +16,7 @@ class MainMenu extends React.Component {
             <MenuStyled mode="horizontal" selectable={false} selectedKeys={[]}>
                 <MenuItem key="export-pdf">
                     <a
-                        href="https://rhysdiabtester.atlassian.net/wiki/x/DQCd"
+                        href={process.env.DOCUMENTATION}
                         target="_blank"
                         rel="noopener noreferrer"
                     >

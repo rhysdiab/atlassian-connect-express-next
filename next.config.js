@@ -7,6 +7,7 @@ module.exports = {
   TOKEN: process.env.TOKEN,
   HOST_BASE_URL: process.env.HOST_BASE_URL,
   LOCAL_BASE_URL: process.env.LOCAL_BASE_URL,
-  USER_ACCOUNT_ID: process.env.USER_ACCOUNT_ID
+  USER_ACCOUNT_ID: process.env.USER_ACCOUNT_ID,
+  DOCUMENTATION: process.env.DOCUMENTATION,
  },
 }

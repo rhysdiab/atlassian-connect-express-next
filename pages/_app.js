@@ -22,14 +22,6 @@ export default class MyApp extends App {
    token = process.env.TOKEN;
   }
 
-  if (!hostBaseUrl) {
-   hostBaseUrl = process.env.HOST_BASE_URL;
-  }
-
-  if (!localBaseUrl) {
-   localBaseUrl = process.env.LOCAL_BASE_URL;
-  }
-
   if (!userAccountId) {
    userAccountId = process.env.USER_ACCOUNT_ID;
   }
