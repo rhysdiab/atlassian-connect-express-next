@@ -7,12 +7,14 @@
     "start": "NODE_ENV=production node -r esm server.js"
   },
   "dependencies": {
+    "@sentry/browser": "^5.15.4",
     "antd": "^4.1.1",
     "atlassian-connect-express": "^4.0.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "cross-env": "^5.2.0",
+    "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
     "esm": "^3.2.25",
     "express": "^4.16.4",

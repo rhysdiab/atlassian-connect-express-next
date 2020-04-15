@@ -2,6 +2,7 @@ import App from 'next/app';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import MainMenu from '../components/MainMenu';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 import 'antd/dist/antd.css';
 
@@ -15,10 +16,12 @@ export default class MyApp extends App {
  render() {
   const { Component, pageProps, router } = this.props;
   return (
-   <ThemeProvider theme={theme}>
-    <MainMenu />
-    <Component {...pageProps} {...router.query} />
-   </ThemeProvider>
+   <ErrorBoundary>
+    <ThemeProvider theme={theme}>
+     <MainMenu />
+     <Component {...pageProps} {...router.query} />
+    </ThemeProvider>
+   </ErrorBoundary>
   );
  }
 }

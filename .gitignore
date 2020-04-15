@@ -6,6 +6,7 @@
 node_modules
 *.pem
 credentials.json
+.env
 
 # dependencies
 /node_modules

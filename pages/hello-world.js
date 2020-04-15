@@ -5,6 +5,7 @@ export default props => {
   return (
     <div>
       <Title>Atlassian Connect Next</Title>
+      <div>{process.env.TEST_VAR}</div>
       <div>{JSON.stringify(props)}</div>
     </div>
   );
