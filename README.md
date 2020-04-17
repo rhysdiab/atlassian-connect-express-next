@@ -24,7 +24,7 @@ git clone git@github.com:rhysdiab/atlassian-connect-express-next.git name-of-you
 
 Copy the ```env.example``` file and paste it into your own ```.env``` file. Swap out the credentials with your own
 
-Copy the ```sample.credentials.json``` file and paste it into your own ```credentials.json``` file. Swap out the credentials for your own.
+Copy the ```sample.credentials.json``` file and paste it into your own ```credentials.json``` file. Swap out the credentials for your own
 
 Install it and run it
 
