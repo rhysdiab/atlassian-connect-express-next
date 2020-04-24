@@ -26,6 +26,7 @@ function HelloWorld(props) {
     <Loading loading={loading}>
       <PageContainerStyled>
         <Title>Atlassian Connect Express Next</Title>
+        <TextStyled>{JSON.stringify(props)}</TextStyled>
       </PageContainerStyled>
     </Loading>
   );
@@ -39,7 +40,13 @@ const Title = styled.h1`
 const PageContainerStyled = styled.div`
   display: grid;
   padding: 10px;
-  grid-template-columns: auto;
+  grid-template-columns: 100%;
   grid-template-rows: auto;
   justify-items: center;
+  width: 100vw;
+`;
+
+const TextStyled = styled.p`
+  word-wrap: break-word;
+  width: 90%;
 `;
