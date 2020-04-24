@@ -1,18 +1,45 @@
 import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import Loading from '../components/Loading';
 
-export default props => {
+function HelloWorld(props) {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const { AP } = window;
+    /**
+     * Make API calls here
+     */
+    const response = AP.request({
+      url: `/rest/api/3/filter/favourite`,
+      type: 'GET',
+    })
+      .then(data => {
+        setLoading(false);
+        console.log(data.body);
+      })
+      .catch(e => {
+        setLoading(false);
+        console.log(e.err);
+      });
+  });
   return (
-    <PageContainerStyled>
-      <Title>Atlassian Connect Next</Title>
-      <div>{JSON.stringify(props)}</div>
-    </PageContainerStyled>
+    <Loading loading={loading}>
+      <PageContainerStyled>
+        <Title>Atlassian Connect Express Next</Title>
+      </PageContainerStyled>
+    </Loading>
   );
-};
+}
+export default HelloWorld;
 
 const Title = styled.h1`
   font-size: 50px;
 `;
 
 const PageContainerStyled = styled.div`
-padding: 10px;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-items: center;
 `;
