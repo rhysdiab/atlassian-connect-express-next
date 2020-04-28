@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import MainMenu from '../components/MainMenu';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Cancelled from '../components/Cancelled';
 
 import 'antd/dist/antd.css';
 
@@ -14,8 +15,8 @@ const theme = {
 
 export default class MyApp extends App {
  render() {
-
-  let { hostBaseUrl, localBaseUrl, userAccountId, token, projectKey } = this.props;
+  let { hostBaseUrl, localBaseUrl, userAccountId, token, projectKey, lic } =
+   this.props && this.props.router && this.props.router.query;
 
   // check if dev environment and change url
   if (!token) {
@@ -31,7 +32,18 @@ export default class MyApp extends App {
    <ErrorBoundary>
     <ThemeProvider theme={theme}>
      <MainMenu />
-     <Component {...pageProps} {...router.query} hostBaseUrl={hostBaseUrl} localBaseUrl={localBaseUrl} userAccountId={userAccountId} token={token} />
+     {lic === 'active' ? (
+      <Component
+       {...pageProps}
+       {...router.query}
+       hostBaseUrl={hostBaseUrl}
+       localBaseUrl={localBaseUrl}
+       userAccountId={userAccountId}
+       token={token}
+      />
+     ) : (
+       <Cancelled />
+      )}
     </ThemeProvider>
    </ErrorBoundary>
   );
