@@ -21,7 +21,7 @@ function HelloWorld(props) {
         setLoading(false);
         console.log(e.err);
       });
-  });
+  }, []);
   return (
     <Loading loading={loading}>
       <PageContainerStyled>
