@@ -1,26 +1,19 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
+import { atlassianApiCall } from '../lib/utils';
 
 function HelloWorld(props) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const { AP } = window;
     /**
      * Make API calls here
      */
-    const response = AP.request({
-      url: `/rest/api/3/filter/favourite`,
-      type: 'GET',
-    })
-      .then(data => {
-        setLoading(false);
-        console.log(data.body);
-      })
-      .catch(e => {
-        setLoading(false);
-        console.log(e.err);
-      });
+    async function fetchData() {
+      const quickFilters = await atlassianApiCall({ url: '/rest/api/3/filter/favourite' });
+      setLoading(false);
+    }
+    fetchData();
   }, []);
   return (
     <Loading loading={loading}>
