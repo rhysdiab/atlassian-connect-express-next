@@ -59,6 +59,9 @@ MyApp.getInitialProps = async appContext => {
 };
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    height: 100vh;
+  }
 
   #__next {
     height: 100%;

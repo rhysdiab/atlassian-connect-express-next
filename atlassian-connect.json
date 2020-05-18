@@ -2,6 +2,7 @@
     "key": "my-app",
     "name": "My app",
     "description": "My Next.js Atlassian App",
+    "enableLicensing": true,
     "baseUrl": "{{localBaseUrl}}",
     "links": {
         "self": "{{localBaseUrl}}atlassian-connect.json"

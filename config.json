@@ -67,6 +67,7 @@
             // PaaS like Heroku will provide DB connection URL through environment variable.
             "url": "$DATABASE_URL"
         },
+        "maxTokenAge": 7890000,
         // The app can only be registered by the products on these domains:
         "whitelist": [
             "*.jira-dev.com",
