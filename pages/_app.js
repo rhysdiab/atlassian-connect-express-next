@@ -33,7 +33,7 @@ export default class MyApp extends App {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <MainMenu />
-          {lic === 'none' ? (
+          {lic !== 'active' ? (
             <Component
               {...pageProps}
               {...router.query}
@@ -60,7 +60,7 @@ MyApp.getInitialProps = async appContext => {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    height: 100vh;
+    min-height: 1000px;
   }
 
   #__next {
