@@ -28,12 +28,17 @@ export default class MyApp extends App {
     }
 
     const { Component, pageProps, router } = this.props;
+
+    if (process.env.NODE_ENV === 'development') {
+      lic = 'active';
+    }
+
     return (
       <ErrorBoundary>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <MainMenu />
-          {lic !== 'active' ? (
+          {lic === 'active' ? (
             <Component
               {...pageProps}
               {...router.query}
