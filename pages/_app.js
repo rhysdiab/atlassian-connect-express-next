@@ -18,7 +18,6 @@ export default class MyApp extends App {
     let { hostBaseUrl, localBaseUrl, userAccountId, token, projectKey, lic } =
       this.props && this.props.router && this.props.router.query;
 
-    // check if dev environment and change url
     if (!token) {
       token = process.env.TOKEN;
     }
@@ -48,7 +47,7 @@ export default class MyApp extends App {
               token={token}
             />
           ) : (
-              <Cancelled />
+              <Cancelled {...pageProps} {...router.query} />
             )}
         </ThemeProvider>
       </ErrorBoundary>
