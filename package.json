@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "AC_OPTS=no-auth,no-token-verification,force-reg node -r esm server.js",
+    "backend": "nodemon -r esm server.js",
     "build": "next build",
     "start": "NODE_ENV=production node -r esm server.js"
   },

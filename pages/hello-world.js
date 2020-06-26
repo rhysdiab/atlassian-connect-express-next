@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
-import { atlassianApiCall } from '../lib/utils';
+import atlassianApiCall from '../isomorphic/atlassianApiCall';
 
 function HelloWorld(props) {
   const [loading, setLoading] = useState(true);
