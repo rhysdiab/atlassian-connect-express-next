@@ -16,17 +16,17 @@ The goal of this project is to have a starting place to create Atlassian addons 
 
 ## How To Use ##
 
-Clone this repository
+1) Clone this repository and give your app a unique name
 
 ```sh
 git clone git@github.com:rhysdiab/atlassian-connect-express-next.git name-of-your-app
 ```
 
-1) Copy the ```env.example``` file and paste it into your own ```.env``` file. Swap out the credentials with your own
+2) Copy the ```env.example``` file and paste it into your own ```.env``` file. Swap out the credentials with your own
 
-2) Copy the ```sample.credentials.json``` file and paste it into your own ```credentials.json``` file. Swap out the credentials for your own
+3) Copy the ```sample.credentials.json``` file and paste it into your own ```credentials.json``` file. Swap out the credentials for your own
 
-3) Install and run it using the commands below:
+4) Install and run it using the commands below:
 
 ```sh
 npm install
