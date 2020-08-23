@@ -4,7 +4,7 @@ const frontendApiCall = async ({ url, type = 'GET', data, errorReturnValue }) =>
     AP.request({
       url,
       type,
-      data: JSON.stringify(data),
+      ...(data && { data: JSON.stringify(data) }),
       contentType: 'application/json',
     })
       .then(response => {
@@ -33,7 +33,7 @@ const backendApiCall = async ({ url, type, data, httpClient, errorReturnValue })
               Accept: 'application/json',
             },
             url,
-            body: JSON.stringify(data),
+            ...(data && { body: JSON.stringify(data) }),
           },
           (err, response, body) => {
             if (err) {
@@ -97,6 +97,30 @@ const backendApiCall = async ({ url, type, data, httpClient, errorReturnValue })
           }
         );
         break;
+      case 'DELETE':
+        httpClient.del(
+          {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            url,
+            body: JSON.stringify(data),
+          },
+          (err, response, body) => {
+            if (err) {
+              reject({ errorMessage: [err] });
+            } else {
+              try {
+                resolve(JSON.parse(body));
+              } catch {
+                resolve(errorReturnValue);
+              }
+            }
+          }
+        );
+        break;
       default:
         httpClient.get(
           {
@@ -106,7 +130,7 @@ const backendApiCall = async ({ url, type, data, httpClient, errorReturnValue })
               Accept: 'application/json',
             },
             url,
-            body: JSON.stringify(data),
+            ...(data && { body: JSON.stringify(data) }),
           },
           (err, response, body) => {
             if (err) {
