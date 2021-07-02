@@ -1,5 +1,8 @@
 
 
+# NOTE: This Project Is No Longer Supported
+
+Since [Atlassian Connect Express](https://bitbucket.org/atlassian/atlassian-connect-express/src/master/) added support for react.js to their starter kit, I've stopped maintaining this project.
 # A Starter Project For Making Atlassian Addons with Next.js
 
 The goal of this project is to have a starting place to create Atlassian addons with the latest version of Next.js and an express server based on [ACE](https://bitbucket.org/atlassian/atlassian-connect-express/src/master/).
