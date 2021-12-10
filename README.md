@@ -16,7 +16,6 @@ The goal of this project is to have a starting place to create Atlassian addons 
 - ***Styled Components***
 - ***Ant Design***
 - ***Sentry***
-
 ## How To Use ##
 
 1) Clone this repository and give your app a unique name
